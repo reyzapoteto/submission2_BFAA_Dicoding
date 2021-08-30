@@ -1,6 +1,5 @@
 package com.example.tugas_submission2_bfaa
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -58,7 +57,6 @@ class DetailActivity : AppCompatActivity() {
         RetrofitUser.instance.getUsersDetail(name.toString())
             .enqueue(object : Callback<UserDetailDatamodel> {
 
-                @SuppressLint("SetTextI18n", "StringFormatMatches")
                 override fun onResponse(
                     call: Call<UserDetailDatamodel>,
                     response: Response<UserDetailDatamodel>

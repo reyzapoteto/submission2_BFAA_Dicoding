@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.tugas_submission2_bfaa.Adapter.FollowingAdapter
-import com.example.tugas_submission2_bfaa.Datamodel.UserFollowingDatamodel
+import com.example.tugas_submission2_bfaa.Adapter.FollowAdapter
+import com.example.tugas_submission2_bfaa.Datamodel.UserFollowDatamodel
 import com.example.tugas_submission2_bfaa.Retrofit.RetrofitUser
 import com.example.tugas_submission2_bfaa.databinding.FragmentFollowingBinding
 import retrofit2.Call
@@ -43,11 +43,11 @@ class FollowingFragment : Fragment() {
     private fun getAllFollowing(context: Context) {
 
         RetrofitUser.instance.getUserFollowing(name)
-            .enqueue(object : Callback<ArrayList<UserFollowingDatamodel>> {
+            .enqueue(object : Callback<ArrayList<UserFollowDatamodel>> {
 
                 override fun onResponse(
-                    call: Call<ArrayList<UserFollowingDatamodel>>,
-                    response: Response<ArrayList<UserFollowingDatamodel>>
+                    call: Call<ArrayList<UserFollowDatamodel>>,
+                    response: Response<ArrayList<UserFollowDatamodel>>
                 ) {
 
                     when (response.code()) {
@@ -61,14 +61,13 @@ class FollowingFragment : Fragment() {
                     }
                     val list = response.body()
 
-                    val userFollowing = list?.let {
-                        FollowingAdapter(context, it)
-                    }
+                    val userFollowing = FollowAdapter()
                     binding!!.rvFollowing.adapter = userFollowing
+                    list?.let { userFollowing.subList(it) }
                 }
 
                 override fun onFailure(
-                    call: Call<ArrayList<UserFollowingDatamodel>>,
+                    call: Call<ArrayList<UserFollowDatamodel>>,
                     t: Throwable
                 ) {
                     Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()

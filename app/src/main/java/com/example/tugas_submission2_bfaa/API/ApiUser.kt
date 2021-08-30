@@ -27,11 +27,11 @@ interface ApiUser {
     @GET("users/{name}/following")
     fun getUserFollowing(
         @Path("name") nameUser: String
-    ): Call<ArrayList<UserFollowingDatamodel>>
+    ): Call<ArrayList<UserFollowDatamodel>>
 
     @GET("users/{name}/followers")
     fun getUserFollowers(
         @Path("name") nameUser: String
-    ): Call<ArrayList<UserFollowersDatamodel>>
+    ): Call<ArrayList<UserFollowDatamodel>>
 
 }

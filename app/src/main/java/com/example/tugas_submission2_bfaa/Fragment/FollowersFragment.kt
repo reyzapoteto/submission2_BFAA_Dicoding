@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.tugas_submission2_bfaa.Adapter.FollowersAdapter
-import com.example.tugas_submission2_bfaa.Datamodel.UserFollowersDatamodel
+import com.example.tugas_submission2_bfaa.Adapter.FollowAdapter
+import com.example.tugas_submission2_bfaa.Datamodel.UserFollowDatamodel
 import com.example.tugas_submission2_bfaa.Retrofit.RetrofitUser
 import com.example.tugas_submission2_bfaa.databinding.FragmentFollowersBinding
 import retrofit2.Call
@@ -42,11 +42,11 @@ class FollowersFragment : Fragment() {
     private fun getUserFollowers(context: Context) {
 
         RetrofitUser.instance.getUserFollowers(name)
-            .enqueue(object : Callback<ArrayList<UserFollowersDatamodel>> {
+            .enqueue(object : Callback<ArrayList<UserFollowDatamodel>> {
 
                 override fun onResponse(
-                    call: Call<ArrayList<UserFollowersDatamodel>>,
-                    response: Response<ArrayList<UserFollowersDatamodel>>
+                    call: Call<ArrayList<UserFollowDatamodel>>,
+                    response: Response<ArrayList<UserFollowDatamodel>>
                 ) {
                     when (response.code()) {
                         401 -> Log.d(TAG, "${response.code()} : Bad Request")
@@ -56,15 +56,14 @@ class FollowersFragment : Fragment() {
                     }
 
                     val list = response.body()
-
-                    val userFollowers = list?.let {
-                        FollowersAdapter(context, it)
-                    }
+                    val userFollowers = FollowAdapter()
                     binding!!.rvFollowers.adapter = userFollowers
+                    list?.let { userFollowers.subList(it) }
+
                 }
 
                 override fun onFailure(
-                    call: Call<ArrayList<UserFollowersDatamodel>>,
+                    call: Call<ArrayList<UserFollowDatamodel>>,
                     t: Throwable
                 ) {
                     Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()

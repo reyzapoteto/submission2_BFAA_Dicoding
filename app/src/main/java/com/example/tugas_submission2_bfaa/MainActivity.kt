@@ -13,7 +13,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import com.example.tugas_submission2_bfaa.Adapter.UserMainAdapter
-import com.example.tugas_submission2_bfaa.Adapter.UserMainFilteredAdapter
 import com.example.tugas_submission2_bfaa.Datamodel.UserDatamodel
 import com.example.tugas_submission2_bfaa.Datamodel.UserSearchDatamodel
 import com.example.tugas_submission2_bfaa.Retrofit.RetrofitUser
@@ -25,6 +24,8 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    val userAdapter = UserMainAdapter()
 
     companion object {
         val TAG: String = MainActivity::class.java.simpleName
@@ -102,8 +103,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 binding.progUSer.visibility = View.INVISIBLE
                 val list = response.body()
-
-                val userAdapter = list?.let { UserMainAdapter(this@MainActivity, it) }
+                list?.let { userAdapter.submitList(it) }
                 binding.rvUser.adapter = userAdapter
             }
 
@@ -136,21 +136,20 @@ class MainActivity : AppCompatActivity() {
                             "${response.code()} : ${response.errorBody()}"
                         )
                     }
+
                     binding.progUSer.visibility = View.INVISIBLE
+
                     val list = response.body()
 
-                    val userAdapter =
-                        UserMainFilteredAdapter(this@MainActivity, list!!)
-
-                    userAdapter.filter.filter(query)
+                    list?.let { result -> userAdapter.submitList(result.items) }
                     binding.rvUser.adapter = userAdapter
+
                 }
 
                 override fun onFailure(call: Call<UserSearchDatamodel>, t: Throwable) {
                     binding.progUSer.visibility = View.INVISIBLE
                     Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
                 }
-
             })
     }
 }
