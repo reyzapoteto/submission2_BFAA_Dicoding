@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Tugas_Submission2_BFAA</string>
+    <string name="dummy">-</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="text_search">Search</string>
+    <string name="text_settingsuser">settingsUser</string>
+    <string name="usernameHint">Please Enter Username</string>
+
+    <string name="fullname">Fullname : </string>
+    <string name="repo">Repository : </string>
+    <string name="company">Company : </string>
+    <string name="location">Location : </string>
+
+</resources>

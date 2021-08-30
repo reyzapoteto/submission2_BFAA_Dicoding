@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tugas_Submission2_BFAA</string>
+    <string name="dummy">-</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="following">Mengikuti</string>
+    <string name="followers">Pengikut</string>
+    <string name="text_search">Pencari</string>
+    <string name="text_settingsuser">Pengaturan Pengguna</string>
+    <string name="usernameHint">Masukkan nama Pengguna</string>
+
+    <string name="fullname">Nama Lengkap :  </string>
+    <string name="repo">Gudang : </string>
+    <string name="company">Perusahaan : </string>
+    <string name="location">Lokasi : </string>
+
+</resources>
