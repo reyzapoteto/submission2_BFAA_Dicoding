@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitUser {
 
-    const val BASEUSRL = "https://api.github.com/"
+    private const val BASEUSRL = "https://api.github.com/"
 
     val instance: ApiUser by lazy {
 
