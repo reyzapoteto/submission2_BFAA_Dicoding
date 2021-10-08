@@ -34,12 +34,12 @@ class FollowersFragment : Fragment() {
 
         val intent = requireActivity().intent
         name = intent.getStringExtra("name").toString()
-        getUserFollowers(requireActivity())
+        getUserFollowers(requireActivity(), name)
         _binding = FragmentFollowersBinding.inflate(inflater, container, false)
         return binding!!.root
     }
 
-    private fun getUserFollowers(context: Context) {
+    private fun getUserFollowers(context: Context, name: String) {
 
         RetrofitUser.instance.getUserFollowers(name)
             .enqueue(object : Callback<ArrayList<UserFollowDatamodel>> {

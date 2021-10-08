@@ -12,5 +12,8 @@
     <string name="repo">Repository : </string>
     <string name="company">Company : </string>
     <string name="location">Location : </string>
+    <string name="favorite">Favorite</string>
+    <string name="darkmode">Darkmode</string>
+    <string name="language">Language</string>
 
 </resources>

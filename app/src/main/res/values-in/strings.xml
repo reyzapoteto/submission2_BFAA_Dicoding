@@ -14,4 +14,8 @@
     <string name="company">Perusahaan : </string>
     <string name="location">Lokasi : </string>
 
+    <string name="favorite">Favorite</string>
+    <string name="darkmode">Mode Gelap</string>
+    <string name="language">Bahasa</string>
+
 </resources>

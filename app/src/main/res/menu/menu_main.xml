@@ -10,9 +10,15 @@
         app:showAsAction="collapseActionView|ifRoom" />
 
     <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        app:showAsAction="always"
+        android:title="@string/favorite"/>
+    <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_settings_24"
         app:showAsAction="always"
         android:title="@string/text_settingsuser"/>
+
 
 </menu>
