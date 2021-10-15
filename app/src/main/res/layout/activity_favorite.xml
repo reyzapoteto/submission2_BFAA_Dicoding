@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavoriteActivity">
+    tools:context=".Main.FavoriteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFavorite"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,12 +5,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tugas_submission2_bfaa.Datamodel.UserDatamodel
-import com.example.tugas_submission2_bfaa.DetailActivity
+import com.example.tugas_submission2_bfaa.Main.DetailActivity
 import com.example.tugas_submission2_bfaa.R
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -44,6 +45,7 @@ class UserMainAdapter : RecyclerView.Adapter<UserMainAdapter.ViewHolder>() {
         holder.backgroundUSer.setOnClickListener {
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("name", listDatamodel[position].login)
+            intent.putExtra("status","detail")
             context.startActivity(intent)
         }
     }

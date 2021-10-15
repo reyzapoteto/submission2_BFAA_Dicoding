@@ -1,4 +1,4 @@
-package com.example.tugas_submission2_bfaa
+package com.example.tugas_submission2_bfaa.Main
 
 import android.content.Context
 import android.content.Intent
@@ -67,13 +67,13 @@ class SettingsActivity : AppCompatActivity() {
 
     }
 
-    fun saveTheme(key: String, value: Boolean) {
+    private fun saveTheme(key: String, value: Boolean) {
 
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         val editor = sharedPreferences.edit()
         editor.putBoolean(key, value)
-        editor.commit()
+        editor.apply()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

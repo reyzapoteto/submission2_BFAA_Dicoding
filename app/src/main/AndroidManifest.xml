@@ -12,20 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tugas_Submission2_BFAA">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Main.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".Main.SplashScreenActivity"
             android:exported="true" />
         <activity
-            android:name=".FavoriteActivity"
+            android:name=".Main.FavoriteActivity"
             android:exported="true" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".Main.DetailActivity"
             android:exported="true"
             android:theme="@style/Detail" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

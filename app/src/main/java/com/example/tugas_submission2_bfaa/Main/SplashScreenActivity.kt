@@ -1,4 +1,4 @@
-package com.example.tugas_submission2_bfaa
+package com.example.tugas_submission2_bfaa.Main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.tugas_submission2_bfaa
+package com.example.tugas_submission2_bfaa.Main
 
 import android.app.SearchManager
 import android.content.Context
@@ -6,30 +6,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.provider.Settings
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SearchView
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModelProvider
 import com.example.tugas_submission2_bfaa.Adapter.UserMainAdapter
 import com.example.tugas_submission2_bfaa.Datamodel.UserDatamodel
 import com.example.tugas_submission2_bfaa.Datamodel.UserSearchDatamodel
-import com.example.tugas_submission2_bfaa.MainViewModel.SettingViewModel
-import com.example.tugas_submission2_bfaa.MainViewModel.ViewModelFactory
-import com.example.tugas_submission2_bfaa.Preferences.SettingPreferences
+import com.example.tugas_submission2_bfaa.R
 import com.example.tugas_submission2_bfaa.Retrofit.RetrofitUser
-import com.example.tugas_submission2_bfaa.SettingsActivity.Companion.value
 import com.example.tugas_submission2_bfaa.databinding.ActivityMainBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.switchmaterial.SwitchMaterial
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

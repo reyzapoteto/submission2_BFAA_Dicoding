@@ -17,5 +17,7 @@
     <string name="favorite">Favorite</string>
     <string name="darkmode">Mode Gelap</string>
     <string name="language">Bahasa</string>
+    <string name="user">Pengguna</string>
+
 
 </resources>

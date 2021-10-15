@@ -15,5 +15,6 @@
     <string name="favorite">Favorite</string>
     <string name="darkmode">Darkmode</string>
     <string name="language">Language</string>
+    <string name="user">User</string>
 
 </resources>

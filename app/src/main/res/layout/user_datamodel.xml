@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
+
     <TextView
         android:id="@+id/tvUserName"
         android:layout_width="0dp"
