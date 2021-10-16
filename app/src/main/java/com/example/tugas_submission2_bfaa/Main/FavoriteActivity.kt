@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.tugas_submission2_bfaa.Adapter.UserFavoriteAdapter
 import com.example.tugas_submission2_bfaa.MainViewModel.MainViewModel
 import com.example.tugas_submission2_bfaa.MainViewModel.UserViewModelFactory
-import com.example.tugas_submission2_bfaa.MainViewModel.ViewModelFactory
 import com.example.tugas_submission2_bfaa.databinding.ActivityFavoriteBinding
 
 class FavoriteActivity : AppCompatActivity() {
@@ -43,7 +42,7 @@ class FavoriteActivity : AppCompatActivity() {
         if (item.itemId == android.R.id.home) {
             finish()
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item)
     }
 
     private fun obtainViewModel(activity: AppCompatActivity): MainViewModel {

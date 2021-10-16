@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.tugas_submission2_bfaa.Adapter.TabBarAdapter
 import com.example.tugas_submission2_bfaa.Datamodel.UserDetailDatamodel
 import com.example.tugas_submission2_bfaa.MainViewModel.MainViewModel
 import com.example.tugas_submission2_bfaa.MainViewModel.UserViewModelFactory
-import com.example.tugas_submission2_bfaa.MainViewModel.ViewModelFactory
 import com.example.tugas_submission2_bfaa.R
 import com.example.tugas_submission2_bfaa.Retrofit.RetrofitUser
 import com.example.tugas_submission2_bfaa.database.User
@@ -94,7 +92,7 @@ class DetailActivity : AppCompatActivity() {
                 Toast.makeText(this, "saved", Toast.LENGTH_SHORT).show()
 
             }else{
-                userViewModel.delete(user as User)
+                userViewModel.deleteUser(userUsername.toString())
                 Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show()
 
             }

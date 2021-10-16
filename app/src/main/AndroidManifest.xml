@@ -6,33 +6,43 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tugas_Submission2_BFAA">
+
         <activity
             android:name=".Main.SettingsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode = "singleTop"/>
+
         <activity
             android:name=".Main.SplashScreenActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Main.FavoriteActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Main.DetailActivity"
             android:exported="true"
-            android:theme="@style/Detail" />
-        <activity
-            android:name=".Main.MainActivity"
-            android:exported="true">
+            android:noHistory="true"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Main.FavoriteActivity"
+            android:exported="true"
+            android:launchMode = "singleTop"/>
+        <activity
+            android:name=".Main.DetailActivity"
+            android:exported="true"
+            android:theme="@style/Detail"
+            android:launchMode = "singleTop"/>
+        <activity
+            android:name=".Main.MainActivity"
+            android:exported="true"
+            android:launchMode = "singleTop"/>
     </application>
 
 </manifest>

@@ -51,12 +51,12 @@ class SettingsActivity : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 binding.switchTheme.isChecked = true
                 value = true
-                saveTheme("darkmode", value)
+                saveTheme(value)
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 binding.switchTheme.isChecked = false
                 value = false
-                saveTheme("darkmode", value)
+                saveTheme(value)
             }
         })
 
@@ -67,12 +67,12 @@ class SettingsActivity : AppCompatActivity() {
 
     }
 
-    private fun saveTheme(key: String, value: Boolean) {
+    private fun saveTheme(value: Boolean) {
 
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         val editor = sharedPreferences.edit()
-        editor.putBoolean(key, value)
+        editor.putBoolean("darkmode", value)
         editor.apply()
     }
 
@@ -80,6 +80,6 @@ class SettingsActivity : AppCompatActivity() {
         if (item.itemId == android.R.id.home) {
             finish()
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item)
     }
 }

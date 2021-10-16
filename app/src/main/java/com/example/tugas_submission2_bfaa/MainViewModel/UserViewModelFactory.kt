@@ -26,9 +26,7 @@ class UserViewModelFactory private constructor(private val application: Applicat
     }
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-            return MainViewModel(application) as T
-        }
+        if (modelClass.isAssignableFrom(MainViewModel::class.java)) return MainViewModel(application) as T
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }
 }

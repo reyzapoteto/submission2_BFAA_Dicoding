@@ -2,9 +2,7 @@ package com.example.tugas_submission2_bfaa.MainViewModel
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.tugas_submission2_bfaa.Datamodel.UserFollowDatamodel
 import com.example.tugas_submission2_bfaa.database.User
 import com.example.tugas_submission2_bfaa.database.UserRepository
 
@@ -18,11 +16,8 @@ class MainViewModel(application: Application) : ViewModel() {
         mUserRepository.insert(user)
     }
 
-    fun delete(user: User) {
-        mUserRepository.delete(user)
+    fun deleteUser(username:String){
+        mUserRepository.deleteUser(username)
     }
 
-    fun update(user: User) {
-        mUserRepository.update(user)
-    }
 }

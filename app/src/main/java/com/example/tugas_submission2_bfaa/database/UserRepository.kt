@@ -21,12 +21,8 @@ class UserRepository(application: Application) {
         executorService.execute { mUserDao.insert(user) }
     }
 
-    fun delete(user: User) {
-        executorService.execute { mUserDao.delete(user) }
-    }
-
-    fun update(user: User) {
-        executorService.execute { mUserDao.update(user) }
+    fun deleteUser(username :String){
+        executorService.execute { mUserDao.deleteUser(username) }
     }
 
 }
