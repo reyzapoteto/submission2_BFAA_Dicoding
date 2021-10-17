@@ -40,6 +40,7 @@ class FollowingFragment : Fragment() {
     }
 
     private fun getAllFollowing(context: Context) {
+        binding!!.progUserDetailFollowing.visibility = View.VISIBLE
 
         RetrofitUser.instance.getUserFollowing(name)
             .enqueue(object : Callback<ArrayList<UserFollowDatamodel>> {
@@ -63,12 +64,14 @@ class FollowingFragment : Fragment() {
                     val userFollowing = FollowAdapter()
                     binding!!.rvFollowing.adapter = userFollowing
                     list?.let { userFollowing.subList(it) }
+                    binding!!.progUserDetailFollowing.visibility = View.INVISIBLE
                 }
 
                 override fun onFailure(
                     call: Call<ArrayList<UserFollowDatamodel>>,
                     t: Throwable
                 ) {
+                    binding!!.progUserDetailFollowing.visibility = View.INVISIBLE
                     Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
                 }
 

@@ -34,12 +34,15 @@ class FollowersFragment : Fragment() {
 
         val intent = requireActivity().intent
         name = intent.getStringExtra("name").toString()
-        getUserFollowers(requireActivity(), name)
         _binding = FragmentFollowersBinding.inflate(inflater, container, false)
+        getUserFollowers(requireActivity(), name)
+
         return binding!!.root
     }
 
     private fun getUserFollowers(context: Context, name: String) {
+
+        binding!!.progUserDetailFollower.visibility = View.VISIBLE
 
         RetrofitUser.instance.getUserFollowers(name)
             .enqueue(object : Callback<ArrayList<UserFollowDatamodel>> {
@@ -59,6 +62,8 @@ class FollowersFragment : Fragment() {
                     val userFollowers = FollowAdapter()
                     binding!!.rvFollowers.adapter = userFollowers
                     list?.let { userFollowers.subList(it) }
+                    binding!!.progUserDetailFollower.visibility = View.INVISIBLE
+
 
                 }
 
@@ -66,6 +71,7 @@ class FollowersFragment : Fragment() {
                     call: Call<ArrayList<UserFollowDatamodel>>,
                     t: Throwable
                 ) {
+                    binding!!.progUserDetailFollower.visibility = View.INVISIBLE
                     Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
                 }
 

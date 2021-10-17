@@ -102,7 +102,9 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun getDetailUser(name: String?) {
+
         binding.progUserDetail.visibility = View.VISIBLE
+
         RetrofitUser.instance.getUsersDetail(name.toString())
             .enqueue(object : Callback<UserDetailDatamodel> {
 
